@@ -149,6 +149,27 @@ langBtns.forEach(btn => {
     });
 });
 
+// ===== Bouton Mode Confort (Soft Mode) =====
+const colorModeBtn = document.getElementById('colorModeBtn');
+if (colorModeBtn) {
+    // Charger la préférence depuis le localStorage
+    const savedMode = localStorage.getItem('colorMode');
+    if (savedMode === 'soft') {
+        document.body.classList.add('soft-mode');
+    }
+
+    colorModeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('soft-mode');
+        
+        // Sauvegarder la préférence
+        if (document.body.classList.contains('soft-mode')) {
+            localStorage.setItem('colorMode', 'soft');
+        } else {
+            localStorage.setItem('colorMode', 'normal');
+        }
+    });
+}
+
 // ===== Changement de langue =====
 let currentLang = 'en';
 
