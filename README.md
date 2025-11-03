@@ -76,6 +76,57 @@
     * Prestations professionnelles variées
     * Tags : Prestations, Collectif, Multi-domaines
   - **Total final : 18 projets** (5 personnels + 2 scolaires + 9 École 42 + 2 professionnels)
+- **Système "Voir plus" pour les projets** :
+  - Affichage de 6 projets par défaut
+  - Bouton "Voir plus/Voir moins" en dessous
+  - Fonctionne avec les filtres de catégories
+  - Cache automatiquement si ≤ 6 projets dans la catégorie
+- **Formulaire de contact** :
+  - Formulaire fonctionnel avec Formspree
+  - Envoi direct à lucien.dacunha@gmail.com
+  - Champs : Nom, Email, Sujet, Message
+  - Design glassmorphism cohérent
+  - Messages de succès/erreur
+  - Affichage email en sidebar
+  - Support bilingue FR/EN
+  - Responsive mobile
+- **Liens sociaux dans la navigation** :
+  - Icône GitHub (lien vers https://github.com/listaro75)
+  - Icône LinkedIn (lien vers https://www.linkedin.com/in/lucien-da-cunha/)
+  - Design glassmorphism avec effets hover
+  - Séparateur visuel avant le bouton CV
+  - Responsive mobile avec styles adaptés
+- **Refonte complète de la navbar** (3 novembre 2025) :
+  - Logo "LD" réduit et positionné complètement à gauche
+  - Navigation centrée utilisant tout l'espace disponible
+  - Design unifié pour tous les éléments (liens, icônes, boutons)
+  - Style cohérent : fond rgba(0, 0, 0, 0.03), bordure 0.08, border-radius 8px
+  - Effets hover identiques sur tous les éléments
+  - Bouton CV et langues avec le même style que la navigation
+  - Gap réduit pour une meilleure compacité
+  - Plus épuré et professionnel
+- **Écran de chargement animé** (3 novembre 2025) :
+  - Animation "HELLO WORLD !!" qui s'écrit progressivement
+  - Effet machine à écrire (typewriter)
+  - Curseur clignotant
+  - Fond dégradé noir
+  - Disparition en fondu après l'animation
+  - Vitesse : 100ms par caractère
+  - Responsive mobile (taille réduite)
+- **Thème Terminal complet** (3 novembre 2025) :
+  - Style terminal classique avec vert (#00ff00) sur fond noir
+  - Police monospace (Courier New, Monaco, Consolas)
+  - Tous les textes en vert phosphorescent
+  - Effets de glow/lueur sur tous les éléments (text-shadow)
+  - Bordures vertes style terminal (border-radius: 4px)
+  - Fond noir pur sans dégradé
+  - Cards avec fond noir transparent et bordures vertes
+  - Effets hover avec glow vert intense
+  - Navbar avec bordure verte inférieure
+  - Boutons style terminal avec bordures vertes
+  - Ambiance hacker/développeur rétro
+
+## Technologies utilisées
 - **Menu de filtrage pour les projets** :
   - 5 catégories : Tous, Personnel, Scolaire, École 42, Professionnel
   - Boutons collés ensemble dans un conteneur arrondi

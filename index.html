@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Lucien Da Cunha - Développeur">
+    <meta name="description" content="Portfolio of Lucien Da Cunha - Developer">
     <title>Lucien Da Cunha | Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Effet Matrix Rain Global -->
+    <div class="matrix-rain-bg"></div>
+    
+    <!-- Écran de chargement -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <h1 class="loader-text" id="loaderText"></h1>
+            <div class="loader-cursor">|</div>
+        </div>
+    </div>
+
     <!-- Header / Navigation -->
     <header>
         <nav>
-            <div class="logo" id="logo">LD</div>
+            <div class="logo" id="logo">
+                <span class="logo-prompt">root@portfolio:~$</span>
+                <span class="logo-text">LD</span>
+            </div>
             
             <!-- Menu Hamburger Button -->
             <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -22,17 +36,48 @@
 
             <div class="nav-container" id="navContainer">
                 <ul class="nav-links">
-                    <li><a href="#accueil" class="nav-link" data-fr="Accueil" data-en="Home">Accueil</a></li>
-                    <li><a href="#a-propos" class="nav-link" data-fr="À propos" data-en="About">À propos</a></li>
-                    <li><a href="#diplomes" class="nav-link" data-fr="Diplômes" data-en="Diplomas">Diplômes</a></li>
-                    <li><a href="#competences" class="nav-link" data-fr="Compétences" data-en="Skills">Compétences</a></li>
-                    <li><a href="#projets" class="nav-link" data-fr="Projets" data-en="Projects">Projets</a></li>
-                    <li><a href="#contact" class="nav-link" data-fr="Contact" data-en="Contact">Contact</a></li>
+                    <li><a href="#accueil" class="nav-link" data-fr="cd ~/home" data-en="cd ~/home"><span class="nav-prefix">$</span> <span class="nav-text" data-fr="Accueil" data-en="Home">Accueil</span></a></li>
+                    <li><a href="#a-propos" class="nav-link" data-fr="cat about.txt" data-en="cat about.txt"><span class="nav-prefix">$</span> <span class="nav-text" data-fr="À propos" data-en="About">À propos</span></a></li>
+                    <li><a href="#diplomes" class="nav-link" data-fr="ls diplomes/" data-en="ls diplomas/"><span class="nav-prefix">$</span> <span class="nav-text" data-fr="Diplômes" data-en="Diplomas">Diplômes</span></a></li>
+                    <li><a href="#competences" class="nav-link" data-fr="./skills.sh" data-en="./skills.sh"><span class="nav-prefix">$</span> <span class="nav-text" data-fr="Compétences" data-en="Skills">Compétences</span></a></li>
+                    <li><a href="#projets" class="nav-link" data-fr="git log" data-en="git log"><span class="nav-prefix">$</span> <span class="nav-text" data-fr="Projets" data-en="Projects">Projets</span></a></li>
+                    <li><a href="#contact" class="nav-link" data-fr="mail -s contact" data-en="mail -s contact"><span class="nav-prefix">$</span> <span class="nav-text" data-fr="Contact" data-en="Contact">Contact</span></a></li>
                 </ul>
                 <div class="nav-actions">
-                    <a href="assets/cv.pdf" download class="btn-cv" data-fr="Télécharger CV" data-en="Download CV">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <div class="social-links">
+                        <a href="https://github.com/listaro75" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub" data-terminal="github">
+                            <span class="terminal-label">git://</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lucien-da-cunha/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn" data-terminal="linkedin">
+                            <span class="terminal-label">https://</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <a href="assets/cv.pdf" download class="btn-cv" data-fr="wget cv.pdf" data-en="wget cv.pdf">
+                        <span class="btn-prefix">$</span>
+                        <span class="btn-text" data-fr="Télécharger CV" data-en="Download CV">CV</span>
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                             <path d="M8 12L3 7L4.4 5.6L7 8.2V0H9V8.2L11.6 5.6L13 7L8 12Z" fill="currentColor"/>
+                            <path d="M0 14H16V16H0V14Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <div class="language-switcher">
+                        <button class="lang-btn" data-lang="fr">
+                            <span class="lang-prefix">--lang=</span>FR
+                        </button>
+                        <button class="lang-btn active" data-lang="en">
+                            <span class="lang-prefix">--lang=</span>EN
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
                             <path d="M0 14H16V16H0V14Z" fill="currentColor"/>
                         </svg>
                         Télécharger CV
@@ -59,12 +104,74 @@
     <section id="a-propos" class="section">
         <div class="container">
             <h2 data-fr="À propos de moi" data-en="About me">À propos de moi</h2>
-            <p style="color: white; font-size: 1.1rem; line-height: 1.8; opacity: 0.9;" 
-               data-fr="Bienvenue sur mon portfolio ! Je suis un développeur passionné par la création d'applications web modernes et performantes."
-               data-en="Welcome to my portfolio! I am a developer passionate about creating modern and efficient web applications.">
-                Bienvenue sur mon portfolio ! Je suis un développeur passionné par la création
-                d'applications web modernes et performantes.
-            </p>
+            
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-button red"></span>
+                    <span class="terminal-button yellow"></span>
+                    <span class="terminal-button green"></span>
+                    <span class="terminal-title">lucien@portfolio:~$ cat about.txt</span>
+                </div>
+                <div class="terminal-body terminal-simple">
+                    <p class="terminal-command">
+                        <span class="terminal-user">lucien@portfolio</span>:<span class="terminal-path">~</span>$ cat about.txt
+                    </p>
+                    
+                    <p class="simple-text" data-fr="Je m'appelle Lucien et je suis passionné par l'informatique, les nouvelles technologies et l'impression 3D."
+                       data-en="My name is Lucien and I'm passionate about IT, new technologies and 3D printing.">
+                        Je m'appelle Lucien et je suis passionné par l'informatique, les nouvelles technologies et l'impression 3D.
+                    </p>
+                    
+                    <p class="simple-text" data-fr="Depuis tout jeune, je me suis consacré au fonctionnement de toute chose."
+                       data-en="Since I was young, I've been dedicated to understanding how everything works.">
+                        Depuis tout jeune, je me suis consacré au fonctionnement de toute chose.
+                    </p>
+                    
+                    <p class="simple-text" data-fr="Dès que mon jouet ne marchait plus, je le démontais avec mon père pour essayer de le faire fonctionner."
+                       data-en="Whenever my toy stopped working, I would take it apart with my father to try to fix it.">
+                        Dès que mon jouet ne marchait plus, je le démontais avec mon père pour essayer de le faire fonctionner.
+                    </p>
+                    
+                    <p class="simple-text" data-fr="Je m'amusais à modifier les codes HTML avec l'inspection pour modifier tout plein de choses."
+                       data-en="I enjoyed modifying HTML code with the inspector to change lots of things.">
+                        Je m'amusais à modifier les codes HTML avec l'inspection pour tout personnaliser.
+                    </p>
+                    
+                    <p class="simple-text" data-fr="Et j'ai fini par apprendre le HTML... et de là, tout a commencé !"
+                       data-en="And I ended up learning HTML... and from there, everything started!">
+                        Et j'ai fini par apprendre le HTML... et de là, tout a commencé !
+                    </p>
+                    
+                    <p class="simple-text" data-fr="J'ai acheté un Arduino pour apprendre les mouvements mécaniques."
+                       data-en="I bought an Arduino to learn about mechanical movements.">
+                        J'ai acheté un Arduino pour apprendre les mouvements mécaniques.
+                    </p>
+                    
+                    <p class="simple-text" data-fr="Puis je me suis dirigé vers un cursus plus adapté : le BAC STI2D où j'ai encore plus appris."
+                       data-en="Then I moved towards a more suitable path: BAC STI2D where I learned even more.">
+                        Puis je me suis dirigé vers un cursus plus adapté : le BAC STI2D où j'ai encore plus appris.
+                    </p>
+                    
+                    <p class="simple-text" data-fr="Ensuite l'IUT, j'ai fait un an mais l'apprentissage ne m'a pas plu."
+                       data-en="Then IUT, I did one year but the apprenticeship didn't suit me.">
+                        Ensuite l'IUT, j'ai fait un an mais l'apprentissage ne m'a pas plu.
+                    </p>
+                    
+                    <p class="simple-text" data-fr="J'ai décidé de faire un BTS, puis l'École 42."
+                       data-en="I decided to do a BTS, then École 42.">
+                        J'ai décidé de faire un BTS, puis l'École 42.
+                    </p>
+                    
+                    <p class="simple-text" data-fr="École 42 m'a fait prendre conscience de la puissance de la communication entre élèves et l'apprentissage collaboratif."
+                       data-en="École 42 made me realize the power of peer communication and collaborative learning.">
+                        École 42 m'a fait prendre conscience de la puissance de la communication entre élèves et l'apprentissage collaboratif.
+                    </p>
+                    
+                    <p class="terminal-cursor-simple">
+                        <span class="cursor-blink">_</span>
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -72,38 +179,56 @@
     <section id="diplomes" class="section">
         <div class="container">
             <h2 data-fr="Mes diplômes" data-en="My Diplomas">Mes diplômes</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content card diploma-card">
-                        <h3 class="diploma-title" data-fr="BAC STI2D" data-en="BAC STI2D">BAC STI2D</h3>
-                        <p class="diploma-school" data-fr="Lycée Janson de Sailly" data-en="Janson de Sailly High School">Lycée Janson de Sailly</p>
-                        <p class="diploma-year">2019 - 2021</p>
-                    </div>
+            
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-button red"></span>
+                    <span class="terminal-button yellow"></span>
+                    <span class="terminal-button green"></span>
+                    <span class="terminal-title">lucien@portfolio:~$ ls -la diplomes/</span>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content card diploma-card">
-                        <h3 class="diploma-title" data-fr="IUT Informatique" data-en="IT University Institute">IUT Informatique</h3>
-                        <p class="diploma-school" data-fr="Université Paris Descartes" data-en="Paris Descartes University">Université Paris Descartes</p>
-                        <p class="diploma-year">2021 - 2022</p>
+                <div class="terminal-body">
+                    <div class="diploma-list">
+                        <div class="diploma-item">
+                            <span class="terminal-prompt">drwxr-xr-x</span>
+                            <span class="diploma-date">2019-2021</span>
+                            <span class="diploma-name" data-fr="BAC STI2D" data-en="BAC STI2D">BAC_STI2D</span>
+                            <div class="diploma-details">
+                                <span class="terminal-comment" data-fr="# Lycée Janson de Sailly" data-en="# Janson de Sailly High School"># Lycée Janson de Sailly</span>
+                            </div>
+                        </div>
+                        
+                        <div class="diploma-item">
+                            <span class="terminal-prompt">drwxr-xr-x</span>
+                            <span class="diploma-date">2021-2022</span>
+                            <span class="diploma-name" data-fr="IUT Informatique" data-en="IT University Institute">IUT_Informatique</span>
+                            <div class="diploma-details">
+                                <span class="terminal-comment" data-fr="# Université Paris Descartes" data-en="# Paris Descartes University"># Université Paris Descartes</span>
+                            </div>
+                        </div>
+                        
+                        <div class="diploma-item">
+                            <span class="terminal-prompt">drwxr-xr-x</span>
+                            <span class="diploma-date">2022-2024</span>
+                            <span class="diploma-name" data-fr="BTS SNIR" data-en="BTS SNIR">BTS_SNIR</span>
+                            <div class="diploma-details">
+                                <span class="terminal-comment" data-fr="# Systèmes Numériques Informatique et Réseaux" data-en="# Digital Systems, IT and Networks"># Systèmes Numériques Informatique et Réseaux</span>
+                            </div>
+                        </div>
+                        
+                        <div class="diploma-item">
+                            <span class="terminal-prompt">drwxr-xr-x</span>
+                            <span class="diploma-date">2024-Now</span>
+                            <span class="diploma-name highlight-text" data-fr="École 42" data-en="School 42">Ecole_42</span>
+                            <div class="diploma-details">
+                                <span class="terminal-comment terminal-active" data-fr="# Formation en cours..." data-en="# Ongoing training..."># Formation en cours...</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content card diploma-card">
-                        <h3 class="diploma-title" data-fr="BTS SNIR" data-en="BTS SNIR">BTS SNIR</h3>
-                        <p class="diploma-school" data-fr="Systèmes Numériques Informatique et Réseaux" data-en="Digital Systems, IT and Networks">Systèmes Numériques Informatique et Réseaux</p>
-                        <p class="diploma-year">2022 - 2024</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content card diploma-card">
-                        <h3 class="diploma-title" data-fr="École 42" data-en="School 42">École 42</h3>
-                        <p class="diploma-school" data-fr="Formation en cours" data-en="Ongoing training">Formation en cours</p>
-                        <p class="diploma-year">2024 - Présent</p>
-                    </div>
+                    
+                    <p class="terminal-line terminal-cursor" style="margin-top: 2rem;">
+                        <span class="terminal-prompt">$</span> <span class="cursor-blink">_</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -114,89 +239,82 @@
         <div class="container">
             <h2 data-fr="Mes compétences" data-en="My Skills">Mes compétences</h2>
             
-            <!-- Bouton Voir Plus -->
-            <div class="skills-toggle-container">
-                <button id="skillsToggleBtn" class="btn-skills-toggle" data-fr="Voir plus" data-en="See more">Voir plus</button>
-            </div>
-
-            <!-- Contenu des compétences (caché par défaut) -->
-            <div id="skillsContent" class="skills-content hidden">
-                <!-- École 42 Level -->
-                <div class="skill-section">
-                    <h3 class="skill-category" data-fr="École 42 - Niveau" data-en="School 42 - Level">École 42 - Niveau</h3>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Level 4</span>
-                            <span class="skill-percentage">53%</span>
-                        </div>
-                        <div class="skill-bar-container">
-                            <div class="skill-bar" data-percentage="53"></div>
-                        </div>
-                    </div>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-button red"></span>
+                    <span class="terminal-button yellow"></span>
+                    <span class="terminal-button green"></span>
+                    <span class="terminal-title">lucien@portfolio:~$ ./load_skills.sh</span>
                 </div>
-
-            <!-- Langages de programmation -->
-            <div class="skill-section">
-                <h3 class="skill-category" data-fr="Langages de programmation" data-en="Programming Languages">Langages de programmation</h3>
-                
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">C</span>
-                        <span class="skill-percentage">60%</span>
+                <div class="terminal-body terminal-simple">
+                    <p class="terminal-command">
+                        <span class="terminal-user">lucien@portfolio</span>:<span class="terminal-path">~</span>$ ./load_skills.sh
+                    </p>
+                    
+                    <div class="loading-skills">
+                        <p class="loading-line">
+                            <span class="loading-status">[  OK  ]</span> Loading École 42 Level 4 
+                            <span class="loading-progress">[██████████░░░░░░░░░░] 53%</span>
+                        </p>
+                        
+                        <p class="loading-line">
+                            <span class="loading-status">[  OK  ]</span> Loading C Language
+                            <span class="loading-progress">[████████████░░░░░░░░] 60%</span>
+                        </p>
+                        
+                        <p class="loading-line">
+                            <span class="loading-status">[  OK  ]</span> Loading C++
+                            <span class="loading-progress">[██░░░░░░░░░░░░░░░░░░] 10%</span>
+                        </p>
+                        
+                        <p class="loading-line">
+                            <span class="loading-status">[  OK  ]</span> Loading HTML
+                            <span class="loading-progress">[██████░░░░░░░░░░░░░░] 30%</span>
+                        </p>
+                        
+                        <p class="loading-line">
+                            <span class="loading-status">[  OK  ]</span> Loading CSS
+                            <span class="loading-progress">[█████░░░░░░░░░░░░░░░] 25%</span>
+                        </p>
+                        
+                        <p class="loading-line">
+                            <span class="loading-status">[  OK  ]</span> Loading JavaScript
+                            <span class="loading-progress">[██░░░░░░░░░░░░░░░░░░] 10%</span>
+                        </p>
+                        
+                        <p class="loading-line">
+                            <span class="loading-status">[  OK  ]</span> Loading PHP
+                            <span class="loading-progress">[██████░░░░░░░░░░░░░░] 30%</span>
+                        </p>
+                        
+                        <p class="loading-line">
+                            <span class="loading-status">[  OK  ]</span> Loading Python
+                            <span class="loading-progress">[████░░░░░░░░░░░░░░░░] 20%</span>
+                        </p>
+                        
+                        <p class="loading-line">
+                            <span class="loading-status">[  OK  ]</span> Loading Git
+                            <span class="loading-progress">[████████░░░░░░░░░░░░] 40%</span>
+                        </p>
+                        
+                        <p class="loading-line">
+                            <span class="loading-status">[  OK  ]</span> Loading Linux/Unix
+                            <span class="loading-progress">[██████████░░░░░░░░░░] 50%</span>
+                        </p>
+                        
+                        <p class="loading-line">
+                            <span class="loading-status">[  OK  ]</span> Loading Docker
+                            <span class="loading-progress">[████░░░░░░░░░░░░░░░░] 20%</span>
+                        </p>
                     </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" data-percentage="60"></div>
-                    </div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">C++</span>
-                        <span class="skill-percentage">10%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" data-percentage="10"></div>
-                    </div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">HTML</span>
-                        <span class="skill-percentage">30%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" data-percentage="30"></div>
-                    </div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">CSS</span>
-                        <span class="skill-percentage">25%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" data-percentage="25"></div>
-                    </div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">JavaScript</span>
-                        <span class="skill-percentage">10%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" data-percentage="10"></div>
-                    </div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span class="skill-name">PHP</span>
-                        <span class="skill-percentage">30%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" data-percentage="30"></div>
-                    </div>
+                    
+                    <p class="simple-text" style="margin-top: 1.5rem; color: #00ff00;">
+                        All skills loaded successfully.
+                    </p>
+                    
+                    <p class="terminal-cursor-simple">
+                        <span class="terminal-user">lucien@portfolio</span>:<span class="terminal-path">~</span>$ <span class="cursor-blink">_</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -572,15 +690,76 @@
     <section id="contact" class="section">
         <div class="container">
             <h2 data-fr="Me contacter" data-en="Contact me">Me contacter</h2>
-            <div class="contact-info">
-                <!-- Informations de contact -->
+            
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-button red"></span>
+                    <span class="terminal-button yellow"></span>
+                    <span class="terminal-button green"></span>
+                    <span class="terminal-title">lucien@portfolio:~$ mail -s "Contact"</span>
+                </div>
+                <div class="terminal-body">
+                    <form id="contactForm" action="https://formspree.io/f/xovpoele" method="POST" class="terminal-form">
+                        <div class="form-group-terminal">
+                            <label for="name">
+                                <span class="terminal-prompt">$</span> 
+                                <span data-fr="Nom:" data-en="Name:">Nom:</span>
+                            </label>
+                            <input type="text" id="name" name="name" required data-fr-placeholder="Votre nom" data-en-placeholder="Your name" placeholder="Votre nom">
+                        </div>
+                        
+                        <div class="form-group-terminal">
+                            <label for="email">
+                                <span class="terminal-prompt">$</span> 
+                                <span data-fr="Email:" data-en="Email:">Email:</span>
+                            </label>
+                            <input type="email" id="email" name="_replyto" required data-fr-placeholder="votre.email@exemple.com" data-en-placeholder="your.email@example.com" placeholder="votre.email@exemple.com">
+                        </div>
+                        
+                        <div class="form-group-terminal">
+                            <label for="subject">
+                                <span class="terminal-prompt">$</span> 
+                                <span data-fr="Sujet:" data-en="Subject:">Sujet:</span>
+                            </label>
+                            <input type="text" id="subject" name="_subject" required data-fr-placeholder="Sujet du message" data-en-placeholder="Message subject" placeholder="Sujet du message">
+                        </div>
+                        
+                        <div class="form-group-terminal">
+                            <label for="message">
+                                <span class="terminal-prompt">$</span> 
+                                <span data-fr="Message:" data-en="Message:">Message:</span>
+                            </label>
+                            <textarea id="message" name="message" rows="6" required data-fr-placeholder="Votre message..." data-en-placeholder="Your message..." placeholder="Votre message..."></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_next" value="https://lucien-da-cunha.com/#contact">
+                        
+                        <button type="submit" class="btn-terminal-submit">
+                            <span class="terminal-prompt">$</span> 
+                            <span data-fr="send --to=lucien.dacunha@gmail.com" data-en="send --to=lucien.dacunha@gmail.com">send --to=lucien.dacunha@gmail.com</span>
+                        </button>
+                        
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                    
+                    <div class="contact-info-terminal">
+                        <p class="terminal-line">
+                            <span class="terminal-comment"># Contact rapide:</span>
+                        </p>
+                        <p class="terminal-line">
+                            <span class="terminal-prompt">$</span> 
+                            <span>echo "lucien.dacunha@gmail.com" | </span>
+                            <a href="mailto:lucien.dacunha@gmail.com" class="terminal-link">mail</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Lucien Da Cunha. Tous droits réservés.</p>
+        <p>$ echo "&copy; 2025 Lucien Da Cunha. Tous droits réservés." | cat</p>
     </footer>
 
     <script src="js/script.js"></script>

@@ -1,3 +1,31 @@
+// ===== Loader avec animation "HELLO WORLD !!" =====
+const loader = document.getElementById('loader');
+const loaderText = document.getElementById('loaderText');
+const text = "HELLO WORLD !!";
+let index = 0;
+
+function typeWriter() {
+    if (index < text.length) {
+        loaderText.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 150); // 150ms entre chaque lettre
+    } else {
+        // Une fois le texte terminé, attendre 500ms puis masquer le loader
+        setTimeout(() => {
+            loader.classList.add('hidden');
+            // Supprimer le loader du DOM après la transition
+            setTimeout(() => {
+                loader.remove();
+            }, 500);
+        }, 500);
+    }
+}
+
+// Démarrer l'animation au chargement de la page
+window.addEventListener('load', () => {
+    setTimeout(typeWriter, 300); // Petit délai avant de commencer
+});
+
 // ===== Menu Hamburger =====
 const hamburger = document.getElementById('hamburger');
 const navContainer = document.getElementById('navContainer');
@@ -122,7 +150,7 @@ langBtns.forEach(btn => {
 });
 
 // ===== Changement de langue =====
-let currentLang = 'fr';
+let currentLang = 'en';
 
 langBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -151,6 +179,31 @@ langBtns.forEach(btn => {
                     }
                 }
             });
+        }
+    });
+});
+
+// ===== Initialiser la langue anglaise au chargement =====
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('[data-fr][data-en]');
+    elements.forEach(el => {
+        const translation = el.getAttribute('data-en');
+        if (translation) {
+            if (el.querySelector('.highlight')) {
+                const highlightText = el.querySelector('.highlight').textContent;
+                el.innerHTML = `${translation} <span class="highlight">${highlightText}</span>`;
+            } else {
+                el.textContent = translation;
+            }
+        }
+    });
+    
+    // Mettre à jour les placeholders
+    const inputs = document.querySelectorAll('[data-en-placeholder]');
+    inputs.forEach(input => {
+        const placeholder = input.getAttribute('data-en-placeholder');
+        if (placeholder) {
+            input.placeholder = placeholder;
         }
     });
 });
