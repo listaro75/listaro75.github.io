@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Lucien Da Cunha - Développeur">
+    <title>Lucien Da Cunha | Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <div class="logo" id="logo">LD</div>
+            <ul class="nav-links">
+                <li><a href="#accueil" class="nav-link" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="#a-propos" class="nav-link" data-fr="À propos" data-en="About">À propos</a></li>
+                <li><a href="#diplomes" class="nav-link" data-fr="Diplômes" data-en="Diplomas">Diplômes</a></li>
+                <li><a href="#competences" class="nav-link" data-fr="Compétences" data-en="Skills">Compétences</a></li>
+                <li><a href="#projets" class="nav-link" data-fr="Projets" data-en="Projects">Projets</a></li>
+                <li><a href="#contact" class="nav-link" data-fr="Contact" data-en="Contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="assets/cv.pdf" download class="btn-cv" data-fr="Télécharger CV" data-en="Download CV">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 12L3 7L4.4 5.6L7 8.2V0H9V8.2L11.6 5.6L13 7L8 12Z" fill="currentColor"/>
+                        <path d="M0 14H16V16H0V14Z" fill="currentColor"/>
+                    </svg>
+                    Télécharger CV
+                </a>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1 data-fr="Bonjour, je suis" data-en="Hello, I'm">Bonjour, je suis <span class="highlight">Lucien Da Cunha</span></h1>
+            <p class="hero-subtitle" data-fr="Développeur passionné" data-en="Passionate Developer">Développeur passionné</p>
+            <a href="#contact" class="btn-primary" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="a-propos" class="section">
+        <div class="container">
+            <h2 data-fr="À propos de moi" data-en="About me">À propos de moi</h2>
+            <p style="color: white; font-size: 1.1rem; line-height: 1.8; opacity: 0.9;" 
+               data-fr="Bienvenue sur mon portfolio ! Je suis un développeur passionné par la création d'applications web modernes et performantes."
+               data-en="Welcome to my portfolio! I am a developer passionate about creating modern and efficient web applications.">
+                Bienvenue sur mon portfolio ! Je suis un développeur passionné par la création
+                d'applications web modernes et performantes.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Diplômes -->
+    <section id="diplomes" class="section">
+        <div class="container">
+            <h2 data-fr="Mes diplômes" data-en="My Diplomas">Mes diplômes</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card diploma-card">
+                        <h3 class="diploma-title" data-fr="BAC STI2D" data-en="BAC STI2D">BAC STI2D</h3>
+                        <p class="diploma-school" data-fr="Lycée Janson de Sailly" data-en="Janson de Sailly High School">Lycée Janson de Sailly</p>
+                        <p class="diploma-year">2019 - 2021</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card diploma-card">
+                        <div class="diploma-icon">�</div>
+                        <h3 class="diploma-title" data-fr="IUT Informatique" data-en="IT University Institute">IUT Informatique</h3>
+                        <p class="diploma-school" data-fr="Université Paris Descartes" data-en="Paris Descartes University">Université Paris Descartes</p>
+                        <p class="diploma-year">2021 - 2022</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card diploma-card">
+                        <div class="diploma-icon">�</div>
+                        <h3 class="diploma-title" data-fr="BTS SNIR" data-en="BTS SNIR">BTS SNIR</h3>
+                        <p class="diploma-school" data-fr="Systèmes Numériques Informatique et Réseaux" data-en="Digital Systems, IT and Networks">Systèmes Numériques Informatique et Réseaux</p>
+                        <p class="diploma-year">2022 - 2024</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card diploma-card">
+                        <h3 class="diploma-title" data-fr="École 42" data-en="School 42">École 42</h3>
+                        <p class="diploma-school" data-fr="Formation en cours" data-en="Ongoing training">Formation en cours</p>
+                        <p class="diploma-year">2024 - Présent</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="competences" class="section">
+        <div class="container">
+            <h2 data-fr="Mes compétences" data-en="My Skills">Mes compétences</h2>
+            <div class="skills-grid">
+                <!-- Les compétences seront ajoutées ici -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projets" class="section">
+        <div class="container">
+            <h2 data-fr="Mes projets" data-en="My Projects">Mes projets</h2>
+            <div class="projects-grid">
+                <!-- Les projets seront ajoutés ici -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 data-fr="Me contacter" data-en="Contact me">Me contacter</h2>
+            <div class="contact-info">
+                <!-- Informations de contact -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Lucien Da Cunha. Tous droits réservés.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
